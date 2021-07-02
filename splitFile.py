@@ -26,9 +26,7 @@ import argparse
 
 dir = "tmp"
 
-###
 # Funcion check_Opciones encargada de validar las opciones de entrada
-###
 def check_Opciones():
     # creamos objeto analizador argparse e indicamos que argumentos esperamos
     # contructor ArgumentParser toma varios argumentos
