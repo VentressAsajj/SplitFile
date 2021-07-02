@@ -6,9 +6,9 @@ Este programa divide el fichero pasado como argumento en ficheros de un numero
 determinado de lineas pasado como argumento, lo cual es mas asumible si vas a lanzar
 un ataque de fuerza bruta.
 Ver ayuda:
-    python3 troceafichero.py -h
+    python3 splitFile.py -h
 Por ejemplo:
-   $ python3 troceafichero.py -f userList.txt -t 20000
+   $ python3 splitFile.py -f userList.txt -t 20000
    $ cd tmp
    $ for i in `ls -1`;
    do
@@ -34,7 +34,7 @@ def check_Opciones():
     # contructor ArgumentParser toma varios argumentos
     parser = argparse.ArgumentParser(
         description = 'Trocea fichero en el numero de lineas que se indican',
-        prog = 'python3 troceafichero.py', usage='%(prog)s [-h]'
+        prog = 'python3 splitFile.py', usage='%(prog)s [-h]'
     )
     parser.add_argument("-f", "--inputfile", help="fichero a trocear")
     parser.add_argument("-t", "--chucksize", help="tamaño fichero salilda en lineas", type = int, default = 0)
@@ -48,9 +48,8 @@ def check_Opciones():
     #print(args)
     return fileinput, chunk_size
 
-###
 #Funcion main: principal
-###
+
 def main():
     (filename, chunk_size) = check_Opciones()
     if ( chunk_size == 0 or not filename):
